@@ -1,3 +1,5 @@
+from random import randint
+
 class Point:
 
   def __init__(self, x, y):
@@ -18,6 +20,10 @@ class Rectangle:
     self.leftUp = leftUp
     self.rightUp = rightUp
 
-pointx = Point(6,7)
-rectanglex = Rectangle(Point(1,1), Point(8,8))
-pointx.falls_in_rectangle(rectanglex)
+rectangle = Rectangle(Point(randint(0,9), randint(0,9)), Point(randint(10,17), randint(10,17) ))
+
+print("Rectangle Coordinates: ", rectangle.leftup.x, "," rectangle.leftup.y, "and", rectangle.rightup.x, "," rectangle.rightup.y)
+
+user_point = Point(float(input("Guess x : ")), float(input("Guess y : ")))
+
+print("The point was inside the rectangle", user_point.falls_in_rectangle(rectangle))
